@@ -1,0 +1,46 @@
+.card {
+  border-radius: var(--uikit-radius-lg);
+  background-color: var(--uikit-color-bg);
+  border: 1px solid var(--uikit-color-border);
+  font-family: var(--uikit-font-sans);
+  color: var(--uikit-color-text);
+  overflow: hidden;
+  transition: box-shadow var(--uikit-transition-normal);
+}
+
+/* Padding */
+.paddingNone { padding: 0; }
+.paddingSm { padding: var(--uikit-space-sm); }
+.paddingMd { padding: var(--uikit-space-lg); }
+.paddingLg { padding: var(--uikit-space-xl); }
+
+/* Shadow */
+.shadowNone { box-shadow: none; }
+.shadowSm { box-shadow: var(--uikit-shadow-sm); }
+.shadowMd { box-shadow: var(--uikit-shadow-md); }
+.shadowLg { box-shadow: var(--uikit-shadow-lg); }
+
+/* Hoverable */
+.hoverable {
+  cursor: pointer;
+}
+
+.hoverable:hover {
+  box-shadow: var(--uikit-shadow-lg);
+}
+
+/* Slots */
+.header {
+  padding: var(--uikit-space-lg) var(--uikit-space-xl);
+  border-bottom: 1px solid var(--uikit-color-border);
+  font-weight: 600;
+}
+
+.body {
+  padding: var(--uikit-space-xl);
+}
+
+.footer {
+  padding: var(--uikit-space-lg) var(--uikit-space-xl);
+  border-top: 1px solid var(--uikit-color-border);
+}

@@ -35,3 +35,6 @@ export type { TabsProps, TabListProps, TabProps, TabPanelProps } from './compone
 
 export { Tooltip } from './components/Tooltip/Tooltip';
 export type { TooltipProps } from './components/Tooltip/Tooltip';
+
+export { Card } from './components/Card/Card';
+export type { CardProps, CardHeaderProps, CardBodyProps, CardFooterProps } from './components/Card/Card';
