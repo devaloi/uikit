@@ -15,3 +15,6 @@ export type { AvatarProps, AvatarGroupProps } from './components/Avatar/Avatar';
 
 export { Input } from './components/Input/Input';
 export type { InputProps } from './components/Input/Input';
+
+export { Select } from './components/Select/Select';
+export type { SelectProps, SelectOption } from './components/Select/Select';

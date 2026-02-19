@@ -1,0 +1,129 @@
+.wrapper {
+  position: relative;
+  font-family: var(--uikit-font-sans);
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid var(--uikit-color-border);
+  border-radius: var(--uikit-radius-md);
+  background-color: var(--uikit-color-bg);
+  color: var(--uikit-color-text);
+  cursor: pointer;
+  font-family: inherit;
+  transition:
+    border-color var(--uikit-transition-fast),
+    box-shadow var(--uikit-transition-fast);
+}
+
+.trigger:focus-visible {
+  border-color: var(--uikit-color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  outline: none;
+}
+
+.trigger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.placeholder {
+  color: var(--uikit-color-text-muted);
+}
+
+.chevron {
+  margin-left: var(--uikit-space-sm);
+  transition: transform var(--uikit-transition-fast);
+  flex-shrink: 0;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* Sizes */
+.sm .trigger {
+  height: 32px;
+  padding: 0 var(--uikit-space-sm);
+  font-size: var(--uikit-text-sm);
+}
+
+.md .trigger {
+  height: 40px;
+  padding: 0 var(--uikit-space-md);
+  font-size: var(--uikit-text-md);
+}
+
+.lg .trigger {
+  height: 48px;
+  padding: 0 var(--uikit-space-lg);
+  font-size: var(--uikit-text-lg);
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  border: 1px solid var(--uikit-color-border);
+  border-radius: var(--uikit-radius-md);
+  background-color: var(--uikit-color-bg);
+  box-shadow: var(--uikit-shadow-md);
+  max-height: 240px;
+  overflow-y: auto;
+  padding: var(--uikit-space-xs) 0;
+}
+
+.searchInput {
+  display: block;
+  width: calc(100% - var(--uikit-space-md) * 2);
+  margin: var(--uikit-space-xs) var(--uikit-space-md);
+  padding: var(--uikit-space-xs) var(--uikit-space-sm);
+  border: 1px solid var(--uikit-color-border);
+  border-radius: var(--uikit-radius-sm);
+  font-size: var(--uikit-text-sm);
+  font-family: inherit;
+  outline: none;
+  background: var(--uikit-color-bg);
+  color: var(--uikit-color-text);
+}
+
+.searchInput:focus {
+  border-color: var(--uikit-color-primary);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: var(--uikit-space-sm) var(--uikit-space-md);
+  cursor: pointer;
+  font-size: var(--uikit-text-sm);
+  color: var(--uikit-color-text);
+  transition: background-color var(--uikit-transition-fast);
+}
+
+.option:hover,
+.optionActive {
+  background-color: var(--uikit-color-surface);
+}
+
+.optionSelected {
+  font-weight: 500;
+  color: var(--uikit-color-primary);
+}
+
+.optionDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.noResults {
+  padding: var(--uikit-space-sm) var(--uikit-space-md);
+  color: var(--uikit-color-text-muted);
+  font-size: var(--uikit-text-sm);
+}
