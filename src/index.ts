@@ -24,3 +24,8 @@ export type { AlertProps, AlertVariant } from './components/Alert/Alert';
 
 export { Modal } from './components/Modal/Modal';
 export type { ModalProps } from './components/Modal/Modal';
+
+export { Toast } from './components/Toast/Toast';
+export type { ToastProps, ToastData, ToastVariant, ToastPosition } from './components/Toast/Toast';
+export { ToastProvider, useToast } from './components/Toast/ToastProvider';
+export type { ToastProviderProps } from './components/Toast/ToastProvider';

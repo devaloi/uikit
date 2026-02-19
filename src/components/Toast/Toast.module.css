@@ -1,0 +1,109 @@
+.container {
+  position: fixed;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: var(--uikit-space-sm);
+  pointer-events: none;
+  max-width: 400px;
+  width: 100%;
+}
+
+.topRight {
+  top: var(--uikit-space-lg);
+  right: var(--uikit-space-lg);
+}
+
+.topLeft {
+  top: var(--uikit-space-lg);
+  left: var(--uikit-space-lg);
+}
+
+.bottomRight {
+  bottom: var(--uikit-space-lg);
+  right: var(--uikit-space-lg);
+}
+
+.bottomLeft {
+  bottom: var(--uikit-space-lg);
+  left: var(--uikit-space-lg);
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--uikit-space-md);
+  padding: var(--uikit-space-md) var(--uikit-space-lg);
+  border-radius: var(--uikit-radius-md);
+  background-color: var(--uikit-color-bg);
+  box-shadow: var(--uikit-shadow-lg);
+  border: 1px solid var(--uikit-color-border);
+  font-family: var(--uikit-font-sans);
+  font-size: var(--uikit-text-sm);
+  pointer-events: auto;
+  animation: slideIn var(--uikit-transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.icon {
+  flex-shrink: 0;
+  font-size: var(--uikit-text-lg);
+  line-height: 1;
+}
+
+.content {
+  flex: 1;
+  color: var(--uikit-color-text);
+}
+
+.dismissButton {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--uikit-color-text-muted);
+  opacity: 0.7;
+  transition: opacity var(--uikit-transition-fast);
+}
+
+.dismissButton:hover {
+  opacity: 1;
+}
+
+/* Variants */
+.success .icon { color: var(--uikit-color-success); }
+.error .icon { color: var(--uikit-color-danger); }
+.warning .icon { color: var(--uikit-color-warning); }
+.info .icon { color: var(--uikit-color-primary); }
+
+.success { border-left: 3px solid var(--uikit-color-success); }
+.error { border-left: 3px solid var(--uikit-color-danger); }
+.warning { border-left: 3px solid var(--uikit-color-warning); }
+.info { border-left: 3px solid var(--uikit-color-primary); }
+
+/* Progress bar */
+.progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  transition: width 100ms linear;
+}
+
+.success .progress { background-color: var(--uikit-color-success); }
+.error .progress { background-color: var(--uikit-color-danger); }
+.warning .progress { background-color: var(--uikit-color-warning); }
+.info .progress { background-color: var(--uikit-color-primary); }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
