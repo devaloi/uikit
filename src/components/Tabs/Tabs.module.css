@@ -1,0 +1,52 @@
+.tabs {
+  font-family: var(--uikit-font-sans);
+}
+
+.list {
+  display: flex;
+  border-bottom: 1px solid var(--uikit-color-border);
+  gap: 0;
+  position: relative;
+}
+
+.tab {
+  position: relative;
+  padding: var(--uikit-space-sm) var(--uikit-space-lg);
+  border: none;
+  background: transparent;
+  color: var(--uikit-color-text-muted);
+  font-family: inherit;
+  font-size: var(--uikit-text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    color var(--uikit-transition-fast),
+    border-color var(--uikit-transition-fast);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.tab:hover {
+  color: var(--uikit-color-text);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--uikit-color-primary);
+  outline-offset: -2px;
+  border-radius: var(--uikit-radius-sm);
+}
+
+.tabActive {
+  color: var(--uikit-color-primary);
+  border-bottom-color: var(--uikit-color-primary);
+}
+
+.tab:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.panel {
+  padding: var(--uikit-space-lg) 0;
+  color: var(--uikit-color-text);
+}

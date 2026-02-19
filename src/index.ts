@@ -29,3 +29,6 @@ export { Toast } from './components/Toast/Toast';
 export type { ToastProps, ToastData, ToastVariant, ToastPosition } from './components/Toast/Toast';
 export { ToastProvider, useToast } from './components/Toast/ToastProvider';
 export type { ToastProviderProps } from './components/Toast/ToastProvider';
+
+export { Tabs } from './components/Tabs/Tabs';
+export type { TabsProps, TabListProps, TabProps, TabPanelProps } from './components/Tabs/Tabs';
