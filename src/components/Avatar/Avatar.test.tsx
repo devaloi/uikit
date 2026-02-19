@@ -16,8 +16,9 @@ describe('Avatar', () => {
 
   it('falls back to initials on image error', () => {
     render(<Avatar src="bad.jpg" name="Jane Smith" data-testid="avatar" />);
-    const img = screen.getByTestId('avatar').querySelector('img')!;
-    fireEvent.error(img);
+    const img = screen.getByTestId('avatar').querySelector('img');
+    expect(img).toBeTruthy();
+    fireEvent.error(img as Element);
     expect(screen.getByTestId('avatar')).toHaveTextContent('JS');
   });
 

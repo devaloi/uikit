@@ -103,8 +103,9 @@ export function ToastProvider({ children, position = 'top-right', maxVisible = 5
   );
 
   useEffect(() => {
+    const timers = timersRef.current;
     return () => {
-      timersRef.current.forEach((timer) => clearInterval(timer));
+      timers.forEach((timer) => clearInterval(timer));
     };
   }, []);
 

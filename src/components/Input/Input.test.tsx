@@ -50,7 +50,7 @@ describe('Input', () => {
     const input = screen.getByRole('textbox');
     const errorId = input.getAttribute('aria-describedby');
     expect(errorId).toBeTruthy();
-    expect(document.getElementById(errorId!)).toHaveTextContent('Required');
+    expect(document.getElementById(errorId as string)).toHaveTextContent('Required');
   });
 
   it('is disabled when disabled prop set', () => {

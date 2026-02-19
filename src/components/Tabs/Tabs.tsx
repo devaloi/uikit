@@ -62,7 +62,7 @@ export const Tabs = forwardRef<HTMLDivElement, TabsProps>(function Tabs(
 
 Tabs.displayName = 'Tabs';
 
-export interface TabListProps extends HTMLAttributes<HTMLDivElement> {}
+export type TabListProps = HTMLAttributes<HTMLDivElement>;
 
 const TabList = forwardRef<HTMLDivElement, TabListProps>(function TabList(
   { className, children, ...rest },

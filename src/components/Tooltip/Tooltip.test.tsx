@@ -82,7 +82,7 @@ describe('Tooltip', () => {
       const trigger = screen.getByText('Trigger');
       expect(trigger).toHaveAttribute('aria-describedby');
       const tooltipId = trigger.getAttribute('aria-describedby');
-      expect(document.getElementById(tooltipId!)).toHaveTextContent('Description');
+      expect(document.getElementById(tooltipId as string)).toHaveTextContent('Description');
     });
   });
 
