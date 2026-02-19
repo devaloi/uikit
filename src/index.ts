@@ -21,3 +21,6 @@ export type { SelectProps, SelectOption } from './components/Select/Select';
 
 export { Alert } from './components/Alert/Alert';
 export type { AlertProps, AlertVariant } from './components/Alert/Alert';
+
+export { Modal } from './components/Modal/Modal';
+export type { ModalProps } from './components/Modal/Modal';

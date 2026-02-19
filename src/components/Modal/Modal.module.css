@@ -1,0 +1,100 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn var(--uikit-transition-normal);
+}
+
+.dialog {
+  position: relative;
+  background-color: var(--uikit-color-bg);
+  border-radius: var(--uikit-radius-lg);
+  box-shadow: var(--uikit-shadow-lg);
+  max-height: 85vh;
+  overflow-y: auto;
+  animation: scaleIn var(--uikit-transition-normal);
+  outline: none;
+}
+
+.sm {
+  width: 400px;
+  max-width: 90vw;
+}
+
+.md {
+  width: 540px;
+  max-width: 90vw;
+}
+
+.lg {
+  width: 720px;
+  max-width: 90vw;
+}
+
+.full {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  border-radius: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--uikit-space-lg) var(--uikit-space-xl);
+  border-bottom: 1px solid var(--uikit-color-border);
+}
+
+.title {
+  font-family: var(--uikit-font-sans);
+  font-size: var(--uikit-text-lg);
+  font-weight: 600;
+  color: var(--uikit-color-text);
+  margin: 0;
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: var(--uikit-radius-sm);
+  cursor: pointer;
+  color: var(--uikit-color-text-muted);
+  transition: background-color var(--uikit-transition-fast);
+}
+
+.closeButton:hover {
+  background-color: var(--uikit-color-surface);
+}
+
+.body {
+  padding: var(--uikit-space-xl);
+  font-family: var(--uikit-font-sans);
+  color: var(--uikit-color-text);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
