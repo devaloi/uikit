@@ -32,3 +32,6 @@ export type { ToastProviderProps } from './components/Toast/ToastProvider';
 
 export { Tabs } from './components/Tabs/Tabs';
 export type { TabsProps, TabListProps, TabProps, TabPanelProps } from './components/Tabs/Tabs';
+
+export { Tooltip } from './components/Tooltip/Tooltip';
+export type { TooltipProps } from './components/Tooltip/Tooltip';
