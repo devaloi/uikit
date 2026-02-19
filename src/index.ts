@@ -18,3 +18,6 @@ export type { InputProps } from './components/Input/Input';
 
 export { Select } from './components/Select/Select';
 export type { SelectProps, SelectOption } from './components/Select/Select';
+
+export { Alert } from './components/Alert/Alert';
+export type { AlertProps, AlertVariant } from './components/Alert/Alert';
