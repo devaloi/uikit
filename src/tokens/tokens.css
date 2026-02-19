@@ -1,1 +1,44 @@
-/* Design tokens - populated in Phase 1.2 */
+:root {
+  /* Colors */
+  --uikit-color-primary: #2563eb;
+  --uikit-color-primary-hover: #1d4ed8;
+  --uikit-color-secondary: #64748b;
+  --uikit-color-success: #16a34a;
+  --uikit-color-warning: #d97706;
+  --uikit-color-danger: #dc2626;
+  --uikit-color-text: #0f172a;
+  --uikit-color-text-muted: #64748b;
+  --uikit-color-bg: #ffffff;
+  --uikit-color-surface: #f8fafc;
+  --uikit-color-border: #e2e8f0;
+
+  /* Spacing */
+  --uikit-space-xs: 4px;
+  --uikit-space-sm: 8px;
+  --uikit-space-md: 12px;
+  --uikit-space-lg: 16px;
+  --uikit-space-xl: 24px;
+  --uikit-space-2xl: 32px;
+
+  /* Typography */
+  --uikit-font-sans: system-ui, -apple-system, sans-serif;
+  --uikit-font-mono: 'SF Mono', Consolas, monospace;
+  --uikit-text-sm: 0.875rem;
+  --uikit-text-md: 1rem;
+  --uikit-text-lg: 1.125rem;
+
+  /* Radii */
+  --uikit-radius-sm: 4px;
+  --uikit-radius-md: 6px;
+  --uikit-radius-lg: 8px;
+  --uikit-radius-full: 9999px;
+
+  /* Shadows */
+  --uikit-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --uikit-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --uikit-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --uikit-transition-fast: 150ms ease;
+  --uikit-transition-normal: 200ms ease;
+}
