@@ -1,0 +1,78 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--uikit-font-sans);
+  font-weight: 500;
+  border-radius: var(--uikit-radius-full);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Sizes */
+.sm {
+  height: 20px;
+  padding: 0 var(--uikit-space-sm);
+  font-size: 0.75rem;
+}
+
+.md {
+  height: 24px;
+  padding: 0 var(--uikit-space-md);
+  font-size: var(--uikit-text-sm);
+}
+
+/* Variants */
+.default {
+  background-color: var(--uikit-color-surface);
+  color: var(--uikit-color-text);
+  border: 1px solid var(--uikit-color-border);
+}
+
+.primary {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.success {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.warning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.danger {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Dot mode */
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+}
+
+.dot.default {
+  background-color: var(--uikit-color-secondary);
+}
+
+.dot.primary {
+  background-color: var(--uikit-color-primary);
+}
+
+.dot.success {
+  background-color: var(--uikit-color-success);
+}
+
+.dot.warning {
+  background-color: var(--uikit-color-warning);
+}
+
+.dot.danger {
+  background-color: var(--uikit-color-danger);
+}
