@@ -9,3 +9,6 @@ export type { BadgeProps } from './components/Badge/Badge';
 
 export { Spinner } from './components/Spinner/Spinner';
 export type { SpinnerProps } from './components/Spinner/Spinner';
+
+export { Avatar, AvatarGroup } from './components/Avatar/Avatar';
+export type { AvatarProps, AvatarGroupProps } from './components/Avatar/Avatar';
