@@ -27,7 +27,7 @@ function useTabsContext(): TabsContextValue {
   return ctx;
 }
 
-export interface TabsProps extends HTMLAttributes<HTMLDivElement> {
+export interface TabsProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
   defaultValue?: string;
   value?: string;
   onChange?: (value: string) => void;

@@ -16,9 +16,7 @@ export type ButtonProps<E extends ElementType = 'button'> = PolymorphicProps<E, 
 
 type ButtonComponent = <E extends ElementType = 'button'>(props: ButtonProps<E>) => ReactNode;
 
-export const Button: ButtonComponent = forwardRef(function Button<
-  E extends ElementType = 'button',
->(
+export const Button: ButtonComponent = forwardRef(function Button(
   {
     as,
     variant = 'primary',
@@ -31,10 +29,10 @@ export const Button: ButtonComponent = forwardRef(function Button<
     children,
     disabled,
     ...rest
-  }: ButtonProps<E>,
-  ref: React.Ref<Element>,
+  }: ButtonProps<'button'> & { as?: ElementType },
+  ref: React.Ref<HTMLButtonElement>,
 ) {
-  const Component = as ?? 'button';
+  const Component = (as ?? 'button') as 'button';
   const isDisabled = disabled || loading;
 
   return (

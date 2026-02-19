@@ -25,7 +25,7 @@ export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(function Tooltip
   ref,
 ) {
   const [visible, setVisible] = useState(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const tooltipId = useId();
 
   const show = useCallback(() => {

@@ -8,11 +8,11 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/uikit.es.js",
-      "require": "./dist/uikit.cjs.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/uikit.cjs.js"
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/uikit.css"
   },
   "sideEffects": false,
   "files": [
