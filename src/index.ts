@@ -12,3 +12,6 @@ export type { SpinnerProps } from './components/Spinner/Spinner';
 
 export { Avatar, AvatarGroup } from './components/Avatar/Avatar';
 export type { AvatarProps, AvatarGroupProps } from './components/Avatar/Avatar';
+
+export { Input } from './components/Input/Input';
+export type { InputProps } from './components/Input/Input';

@@ -1,0 +1,127 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uikit-space-xs);
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--uikit-color-border);
+  border-radius: var(--uikit-radius-md);
+  background-color: var(--uikit-color-bg);
+  font-family: var(--uikit-font-sans);
+  transition:
+    border-color var(--uikit-transition-fast),
+    box-shadow var(--uikit-transition-fast);
+}
+
+.inputWrapper:focus-within {
+  border-color: var(--uikit-color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.error .inputWrapper {
+  border-color: var(--uikit-color-danger);
+}
+
+.error .inputWrapper:focus-within {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.disabled .inputWrapper {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--uikit-color-surface);
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--uikit-color-text);
+  font-family: inherit;
+  width: 100%;
+}
+
+.input::placeholder {
+  color: var(--uikit-color-text-muted);
+}
+
+.input:disabled {
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.sm .inputWrapper {
+  height: 32px;
+  padding: 0 var(--uikit-space-sm);
+}
+
+.sm .input {
+  font-size: var(--uikit-text-sm);
+}
+
+.md .inputWrapper {
+  height: 40px;
+  padding: 0 var(--uikit-space-md);
+}
+
+.md .input {
+  font-size: var(--uikit-text-md);
+}
+
+.lg .inputWrapper {
+  height: 48px;
+  padding: 0 var(--uikit-space-lg);
+}
+
+.lg .input {
+  font-size: var(--uikit-text-lg);
+}
+
+/* Addons */
+.prefix,
+.suffix {
+  display: flex;
+  align-items: center;
+  color: var(--uikit-color-text-muted);
+  flex-shrink: 0;
+}
+
+.prefix {
+  margin-right: var(--uikit-space-sm);
+}
+
+.suffix {
+  margin-left: var(--uikit-space-sm);
+}
+
+/* Clear button */
+.clearButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--uikit-color-text-muted);
+  cursor: pointer;
+  padding: 0;
+  margin-left: var(--uikit-space-xs);
+  border-radius: var(--uikit-radius-sm);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.clearButton:hover {
+  color: var(--uikit-color-text);
+}
+
+/* Error message */
+.errorMessage {
+  color: var(--uikit-color-danger);
+  font-size: var(--uikit-text-sm);
+  font-family: var(--uikit-font-sans);
+}
