@@ -1,0 +1,129 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--uikit-space-sm);
+  border: 1px solid transparent;
+  border-radius: var(--uikit-radius-md);
+  font-family: var(--uikit-font-sans);
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background-color var(--uikit-transition-fast),
+    border-color var(--uikit-transition-fast),
+    color var(--uikit-transition-fast),
+    box-shadow var(--uikit-transition-fast);
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--uikit-color-primary);
+  outline-offset: 2px;
+}
+
+.button:disabled,
+.button[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Sizes */
+.sm {
+  height: 32px;
+  padding: 0 var(--uikit-space-md);
+  font-size: var(--uikit-text-sm);
+}
+
+.md {
+  height: 40px;
+  padding: 0 var(--uikit-space-lg);
+  font-size: var(--uikit-text-md);
+}
+
+.lg {
+  height: 48px;
+  padding: 0 var(--uikit-space-xl);
+  font-size: var(--uikit-text-lg);
+}
+
+/* Variants */
+.primary {
+  background-color: var(--uikit-color-primary);
+  color: #ffffff;
+}
+
+.primary:hover {
+  background-color: var(--uikit-color-primary-hover);
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--uikit-color-text);
+  border-color: var(--uikit-color-border);
+}
+
+.secondary:hover {
+  background-color: var(--uikit-color-surface);
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--uikit-color-text);
+}
+
+.ghost:hover {
+  background-color: var(--uikit-color-surface);
+}
+
+.danger {
+  background-color: var(--uikit-color-danger);
+  color: #ffffff;
+}
+
+.danger:hover {
+  background-color: #b91c1c;
+}
+
+/* Full width */
+.fullWidth {
+  width: 100%;
+}
+
+/* Loading */
+.loading {
+  position: relative;
+  color: transparent;
+}
+
+.loading > * {
+  visibility: hidden;
+}
+
+.loadingSpinner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: visible;
+  color: currentColor;
+}
+
+.loading.primary .loadingSpinner,
+.loading.danger .loadingSpinner {
+  color: #ffffff;
+}
+
+.loading.secondary .loadingSpinner,
+.loading.ghost .loadingSpinner {
+  color: var(--uikit-color-text);
+}
+
+/* Icon */
+.iconRight {
+  flex-direction: row-reverse;
+}
