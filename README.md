@@ -2,6 +2,7 @@
 
 A small, professional React component library with 12 accessible components, design tokens, Storybook interactive docs, comprehensive tests, and tree-shakeable npm-publishable build.
 
+[![CI](https://github.com/devaloi/uikit/actions/workflows/ci.yml/badge.svg)](https://github.com/devaloi/uikit/actions/workflows/ci.yml)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19-61DAFB)](https://react.dev/)
 [![Storybook](https://img.shields.io/badge/Storybook-8-FF4785)](https://storybook.js.org/)
