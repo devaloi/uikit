@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 import { Tabs } from './Tabs';
 
 describe('Tabs', () => {
@@ -106,5 +107,19 @@ describe('Tabs', () => {
     );
     await user.click(screen.getByText('Tab 2'));
     expect(screen.getByText('Panel 1')).toBeInTheDocument();
+  });
+
+  it('has no axe violations', async () => {
+    const { container } = render(
+      <Tabs defaultValue="one">
+        <Tabs.List>
+          <Tabs.Tab value="one">Tab 1</Tabs.Tab>
+          <Tabs.Tab value="two">Tab 2</Tabs.Tab>
+        </Tabs.List>
+        <Tabs.Panel value="one">Panel 1 content</Tabs.Panel>
+        <Tabs.Panel value="two">Panel 2 content</Tabs.Panel>
+      </Tabs>,
+    );
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

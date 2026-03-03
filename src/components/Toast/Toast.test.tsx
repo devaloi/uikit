@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 import { Toast } from './Toast';
 import { ToastProvider, useToast } from './ToastProvider';
 
@@ -117,5 +118,10 @@ describe('ToastProvider', () => {
     const spy = vi.spyOn(console, 'error').mockImplementation(() => {});
     expect(() => render(<ToastTrigger />)).toThrow('useToast must be used within a ToastProvider');
     spy.mockRestore();
+  });
+
+  it('has no axe violations', async () => {
+    const { container } = render(<Toast>Test message</Toast>);
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

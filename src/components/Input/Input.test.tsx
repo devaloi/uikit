@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 import { Input } from './Input';
 
 describe('Input', () => {
@@ -71,5 +72,10 @@ describe('Input', () => {
   it('applies size classes', () => {
     const { container } = render(<Input size="lg" />);
     expect(container.firstChild).toHaveClass('lg');
+  });
+
+  it('has no axe violations', async () => {
+    const { container } = render(<Input aria-label="Search" placeholder="Type here" />);
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

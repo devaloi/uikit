@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 import { Alert } from './Alert';
 
 describe('Alert', () => {
@@ -67,5 +68,10 @@ describe('Alert', () => {
   it('does not show dismiss button by default', () => {
     render(<Alert>Message</Alert>);
     expect(screen.queryByLabelText('Dismiss alert')).not.toBeInTheDocument();
+  });
+
+  it('has no axe violations', async () => {
+    const { container } = render(<Alert>Something happened</Alert>);
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

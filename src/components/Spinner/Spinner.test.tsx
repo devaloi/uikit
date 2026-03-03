@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { Spinner } from './Spinner';
 
 describe('Spinner', () => {
@@ -30,5 +31,10 @@ describe('Spinner', () => {
       expect(screen.getByRole('status')).toHaveClass(size);
       unmount();
     });
+  });
+
+  it('has no axe violations', async () => {
+    const { container } = render(<Spinner label="Loading content" />);
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

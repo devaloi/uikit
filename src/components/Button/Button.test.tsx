@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 import { Button } from './Button';
 
 describe('Button', () => {
@@ -84,5 +85,10 @@ describe('Button', () => {
   it('applies fullWidth', () => {
     render(<Button fullWidth>Full</Button>);
     expect(screen.getByRole('button')).toHaveClass('fullWidth');
+  });
+
+  it('has no axe violations', async () => {
+    const { container } = render(<Button>Click me</Button>);
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

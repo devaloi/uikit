@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { Avatar, AvatarGroup } from './Avatar';
 
 describe('Avatar', () => {
@@ -79,5 +80,10 @@ describe('AvatarGroup', () => {
     // 2 visible + 1 overflow indicator
     expect(screen.getAllByRole('img')).toHaveLength(2);
     expect(screen.getByText('+3')).toBeInTheDocument();
+  });
+
+  it('has no axe violations', async () => {
+    const { container } = render(<Avatar name="Jane Doe" />);
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

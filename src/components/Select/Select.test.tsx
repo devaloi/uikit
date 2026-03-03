@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 import { Select } from './Select';
 
 const options = [
@@ -98,5 +99,12 @@ describe('Select', () => {
   it('is disabled when disabled prop set', () => {
     render(<Select options={options} value={null} onChange={() => {}} disabled />);
     expect(screen.getByRole('combobox')).toBeDisabled();
+  });
+
+  it('has no axe violations', async () => {
+    const { container } = render(
+      <Select options={options} value={null} onChange={() => {}} placeholder="Pick a fruit" aria-label="Fruit" />,
+    );
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

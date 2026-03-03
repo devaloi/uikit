@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 import { Tooltip } from './Tooltip';
 
 describe('Tooltip', () => {
@@ -96,5 +97,14 @@ describe('Tooltip', () => {
     await user.hover(screen.getByText('Trigger'));
     expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
     await waitFor(() => expect(screen.getByRole('tooltip')).toBeInTheDocument(), { timeout: 1000 });
+  });
+
+  it('has no axe violations', async () => {
+    const { container } = render(
+      <Tooltip content="Help text">
+        <button>Hover me</button>
+      </Tooltip>,
+    );
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

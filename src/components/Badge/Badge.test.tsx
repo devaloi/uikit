@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { Badge } from './Badge';
 
 describe('Badge', () => {
@@ -34,5 +35,10 @@ describe('Badge', () => {
       expect(screen.getByTestId('badge')).toHaveClass(variant);
       unmount();
     });
+  });
+
+  it('has no axe violations', async () => {
+    const { container } = render(<Badge>New</Badge>);
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

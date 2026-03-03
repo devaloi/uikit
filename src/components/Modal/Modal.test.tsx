@@ -1,6 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 import { Modal } from './Modal';
 
 describe('Modal', () => {
@@ -142,5 +143,14 @@ describe('Modal', () => {
       </Modal>,
     );
     expect(screen.getByRole('dialog')).toHaveClass('lg');
+  });
+
+  it('has no axe violations', async () => {
+    const { container } = render(
+      <Modal open onClose={() => {}} aria-label="Test dialog">
+        <p>Dialog content</p>
+      </Modal>,
+    );
+    expect(await axe(container)).toHaveNoViolations();
   });
 });

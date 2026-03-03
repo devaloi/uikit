@@ -25,6 +25,8 @@ export interface SelectProps<T> {
   size?: 'sm' | 'md' | 'lg';
   disabled?: boolean;
   className?: string;
+  'aria-label'?: string;
+  'aria-labelledby'?: string;
 }
 
 function SelectInner<T>(
@@ -37,6 +39,8 @@ function SelectInner<T>(
     size = 'md',
     disabled = false,
     className,
+    'aria-label': ariaLabel,
+    'aria-labelledby': ariaLabelledby,
   }: SelectProps<T>,
   ref: React.Ref<HTMLButtonElement>,
 ) {
@@ -139,6 +143,8 @@ function SelectInner<T>(
         aria-haspopup="listbox"
         aria-controls={open ? listboxId : undefined}
         aria-activedescendant={activeOptionId}
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledby}
         className={styles.trigger}
         disabled={disabled}
         onClick={() => !disabled && setOpen(!open)}

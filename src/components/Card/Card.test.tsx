@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { axe } from 'jest-axe';
 import { Card } from './Card';
 
 describe('Card', () => {
@@ -66,5 +67,15 @@ describe('Card', () => {
       </Card>,
     );
     expect(screen.getByTestId('footer')).toHaveClass('footer');
+  });
+
+  it('has no axe violations', async () => {
+    const { container } = render(
+      <Card>
+        <Card.Header>Title</Card.Header>
+        <Card.Body>Content</Card.Body>
+      </Card>,
+    );
+    expect(await axe(container)).toHaveNoViolations();
   });
 });
